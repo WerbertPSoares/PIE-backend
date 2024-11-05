@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EEF0F2 !;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; */
+}
+.cadastro-container {
+    background-color: rgb(255, 255, 255);
+    padding: 50px   ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #449dd14f;
+    width: 500px;
+}
+.cadastro-container h2 {   
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cadastro-container input{
+    padding: 10px;
+    border: 1px solid #449dd1;
+    border-radius: 10px !important;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cadastro-container button {
+    padding: 10px;
+    background-color: #449dd1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cadastro-container button:hover {
+    background-color: #23719e;
+}
+.btn-cadastrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .cadastro-container {
+        padding: 30px;
+        width: 90%; /* Alarga a tela em dispositivos menores */
+    }
+
+    .cadastro-form {
+        width: 100%;
+    }
+}
+

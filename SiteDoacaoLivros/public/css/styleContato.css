@@ -1,0 +1,37 @@
+
+.contato1 input{
+    
+    padding: 10px;
+    border: 1px solid #449dd1;
+    border-radius: 5px;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    width: 330px;
+    box-sizing: border-box;
+}
+.contato2 textarea{
+    
+    width: 330px;
+    resize:none;
+    height: 180px;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 8px;
+    border: 1px solid #449dd1;
+
+}
+.enviar{
+    padding: 10px;
+    background-color: #449dd1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 250px;
+    box-sizing: border-box;
+}
+.enviar:hover{
+    background-color: #23719e;
+}
