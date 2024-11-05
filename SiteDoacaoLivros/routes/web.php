@@ -7,6 +7,7 @@ use App\Http\Controllers\SolicitacaoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContatoController;
 
 // Rota para a página inicial (Home)
 Route::get('/', function () {
@@ -15,6 +16,8 @@ Route::get('/', function () {
 Route::get('/livro', function () {
     return view('livro'); 
 })->name('livro');
+
+
 
 Route::post('/admin/dashboard', [AdminController::class, 'dashboard'])
     ->name('admin.dashboard');
@@ -79,4 +82,8 @@ Route::post('/admin/cadastro', [AdminController::class, 'register'])->name('admi
 
 // Rota para o dashboard do administrador
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('auth');
+Route::post('/contato', [ContatoController::class, 'store'])->name('contato.store');
+// Rota para visualizar todas as mensagens de contato
+Route::get('/admin/contatos', [ContatoController::class, 'index'])->name('contato.index');
+
 

@@ -3,8 +3,8 @@
 @section('title', 'Doações')
 
 @section('content')
-<div class="container">
-    <h2>Lista de Doações</h2>
+<div class="container mt-5">
+    <h2 class="mb-4">Lista de Doações</h2>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -26,48 +26,32 @@
         <a href="{{ route('admin.doacoes.create') }}" class="btn btn-primary">Adicionar Doação</a>
     </div>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Autor</th>
-                <th>Telefone</th>
-                <th>Estado</th>
-                <th>Sinopse</th>
-                <th>Imagem</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($doacoes as $doacao)
-                <tr>
-                    <td>{{ $doacao->id }}</td>
-                    <td>{{ $doacao->nome }}</td>
-                    <td>{{ $doacao->autor }}</td>
-                    <td>{{ $doacao->telefone }}</td>
-                    <td>{{ $doacao->estado }}</td>
-                    <td>{{ $doacao->sinopse }}</td>
-                    <td>
-                        @if ($doacao->imagem)
-                            <img src="{{ asset('storage/' . $doacao->imagem) }}" alt="Imagem do livro" style="width: 100px; height: auto;">
-                        @else
-                            <span>Nenhuma imagem</span>
-                        @endif
-                    </td>
-                    <td>
-                        <a href="{{ route('admin.doacoes.edit', $doacao->id) }}" class="btn btn-warning">Editar</a>
+    <div class="row">
+        @foreach ($doacoes as $doacao)
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-light">
+                    <img src="{{ $doacao->imagem ? asset('storage/' . $doacao->imagem) : asset('images/default-book.png') }}" class="card-img-top" alt="Imagem do livro" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $doacao->nome }}</h5>
+                        <p class="card-text"><strong>Autor:</strong> {{ $doacao->autor }}</p>
+                        <p class="card-text"><strong>Telefone:</strong> {{ $doacao->telefone }}</p>
+                        <p class="card-text"><strong>Estado:</strong> {{ $doacao->estado }}</p>
+                        <p class="card-text"><strong>Sinopse:</strong> {{ Str::limit($doacao->sinopse, 100, '...') }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="{{ route('admin.doacoes.edit', $doacao->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>
                         <form action="{{ route('admin.doacoes.destroy', $doacao->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta doação?');">Excluir</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta doação?');"><i class="fas fa-trash-alt"></i> Excluir</button>
                         </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
     {{ $doacoes->links() }} <!-- Para paginar as doações -->
 </div>
 @endsection
+

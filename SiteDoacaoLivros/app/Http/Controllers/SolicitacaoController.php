@@ -36,7 +36,7 @@ class SolicitacaoController extends Controller
         // Salve a solicitação no banco de dados
         $solicitacao->save();
 
-        
+
         return redirect()->route('solicitacao.create')->with('success', 'Solicitação criada com sucesso!');
     }
 

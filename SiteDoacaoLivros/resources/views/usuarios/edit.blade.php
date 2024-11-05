@@ -19,10 +19,9 @@
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $usuario->email) }}" required>
         </div>
-
         
         <button type="submit" class="btn btn-primary">Atualizar Usuário</button>
-        <a href="{{ route('usuarios.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ url()->previous() }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection
