@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="menuNavbar">
                     <div class="navbar-nav ms-auto">
                         <a href="{{ route('home') }}" class="nav-link active">Home</a>
-                        <a href="{{ route('livro') }}" class="nav-link">Livros</a>
+                        <a href="{{ route('livros.disponiveis') }}" class="nav-link">Livros</a>
                         <a href="{{ route('sobreNos') }}" class="nav-link">Sobre Nós</a>
                         <a href="{{ route('contato') }}" class="nav-link" style="margin-right: 10px;">Contatos</a>
                     </div>

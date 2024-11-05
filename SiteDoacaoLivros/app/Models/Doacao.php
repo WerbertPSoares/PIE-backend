@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Doacao extends Model
 {
     use HasFactory;
+    protected $table = 'doacoes';
+
 
     protected $fillable = [
-        'usuario_id',
-        'livro_id',
-        'data_doacao',
-        'status',
+        'nome',
+        'autor',
+        'telefone',
+        'estado',
+        'sinopse',
+        'imagem',
     ];
 
     /**

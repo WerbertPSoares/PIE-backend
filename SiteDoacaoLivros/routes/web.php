@@ -16,8 +16,15 @@ Route::get('/', function () {
 Route::get('/livro', function () {
     return view('livro'); 
 })->name('livro');
+Route::resource('doacao', DoacaoController::class);
 
-
+Route::get('admin/doacoes/create', [DoacaoController::class, 'create'])->name('admin.doacoes.create');
+Route::prefix('admin')->group(function () {
+    Route::resource('doacoes', DoacaoController::class);
+});
+Route::prefix('admin')->group(function () {
+    Route::resource('doacoes', DoacaoController::class);
+});
 
 Route::post('/admin/dashboard', [AdminController::class, 'dashboard'])
     ->name('admin.dashboard');
@@ -85,5 +92,10 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::post('/contato', [ContatoController::class, 'store'])->name('contato.store');
 // Rota para visualizar todas as mensagens de contato
 Route::get('/admin/contatos', [ContatoController::class, 'index'])->name('contato.index');
+
+Route::resource('livros', LivroController::class);
+Route::post('/livros', [LivroController::class, 'store'])->name('livros.store');
+Route::get('/livros-disponiveis', [LivroController::class, 'livrosDisponiveis'])->name('livros.disponiveis');
+
 
 

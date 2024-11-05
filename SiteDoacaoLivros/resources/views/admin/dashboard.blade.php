@@ -1,4 +1,3 @@
-<!-- resources/views/admin/dashboard.blade.php -->
 @extends('components.app')
 
 @section('title', 'Painel de Administração')
@@ -47,16 +46,20 @@
                     <p class="card-text">Gerencie as solicitações de livros.</p>
                     <a href="{{ route('solicitacao.index') }}" class="btn btn-primary">Ir para Solicitações</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card shadow">
                 <div class="card-body">
                     <h5 class="card-title">Mensagens</h5>
                     <p class="card-text">Veja as mensagens para você.</p>
                     <a href="{{ route('contato.index') }}" class="btn btn-primary">Ir para Mensagens</a>
                 </div>
-
-                
             </div>
         </div>
+
+        
     </div>
 </div>
 @endsection
-
