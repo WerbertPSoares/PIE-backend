@@ -39,11 +39,7 @@
                         <p class="card-text"><strong>Sinopse:</strong> {{ Str::limit($doacao->sinopse, 100, '...') }}</p>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
-                        <a href="{{ route('doacao.edit', $doacao->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>
-                        <form action="{{ route('doacao.destroy', $doacao->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta doação?');"><i class="fas fa-trash-alt"></i> Excluir</button>
+                        
                         </form>
                     </div>
                 </div>

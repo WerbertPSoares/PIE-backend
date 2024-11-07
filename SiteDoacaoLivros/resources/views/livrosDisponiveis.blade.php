@@ -6,33 +6,7 @@
 <body>
     <div class="container my-5 pt-5"> <!-- Padding Top adicionado -->
     <div class="col-auto">
-    <div class="fixed-top" style="background-color: #EEF0F2;">
-      <div class="d-none d-sm-block">
-        <div class="d-flex justify-content-center" style="background-color: #0e0e52; color: #ffff;">
-          <img src="img/icons8-literature-50.png" class="mt-1 mb-1" style="width: 20px; height: 20px;" alt="">
-          <p class="px-3 h6 mt-1 mb-1">Transforme páginas em pontes: doe um livro, mude um destino!</p>
-        </div>
-      </div>
-      <div class="container">
-        <nav class="navbar  navbar-expand-sm">
-          <a href="index.php" class="navbar-brand d-flex">
-            <img src="img/Brown and Beige Modern Bookstore Logo (1).png" style="width: 120px;" alt="">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-            <span class=""><img src="img/icons8-menu-48.png" style="width: 38px;" alt=""></span>
-          </button>
-          <div class="collapse navbar-collapse" id="menuNavbar">
-            <div class="navbar-nav ms-auto">
-              <a href="index.php" class="nav-link">Home</a>
-              <a href="livros.php" class="nav-link active">Livros</a>
-              <a href="sobreNos.php" class="nav-link">Sobre Nós</a>
-              <a href="contato.php" class="nav-link" style="margin-right: 10px;">Contatos</a>
-              <a class="register d-flex align-items-center px-3 text-center text-decoration-none text-light" href="login.php">Entrar</a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
+    
   </div>
   <hr class="mt-5" style="margin-bottom: 64px;">
 
@@ -84,7 +58,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-lg border-primary">
-                        <img src="{{ asset('storage/' . $livro->capa) }}" class="card-img-top" alt="{{ $livro->titulo }}" style="height: 300px; object-fit: cover;">
+                        <img src="{{ asset($livro->capa) }}" class="card-img-top" alt="{{ $livro->titulo }}" style="height: 300px; object-fit: cover;">
                         
                         <div class="card-body">
                             <h5 class="card-title">{{ $livro->titulo }}</h5>
@@ -106,7 +80,7 @@
                             </div>
 
                             <div class="modal-body">
-                                <img src="{{ asset('storage/' . $livro->capa) }}" class="img-fluid" alt="{{ $livro->titulo }}">
+                                <img src="{{ asset($livro->capa) }}" class="img-fluid" alt="{{ $livro->titulo }}">
                                 
                                 <h6>Autor: {{ $livro->autor }}</h6>
                                 <p><strong>Gênero:</strong> {{ $livro->genero }}</p>

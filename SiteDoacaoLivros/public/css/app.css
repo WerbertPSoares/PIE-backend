@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table th, .table td {
+    vertical-align: middle; /* Alinha verticalmente o texto na tabela */
+    padding: 15px; /* Aumenta o padding para deixar os campos mais espaçados */
+}
+
+.table thead th {
+    font-weight: bold;
+}
+
+.btn-sm {
+    font-size: 14px; /* Ajusta o tamanho dos botões para que fiquem menores */
+}

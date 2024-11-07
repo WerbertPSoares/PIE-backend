@@ -5,7 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <style>
+            .navbar {
+                z-index: 1050; 
+            }
+
+            /* Adicionando o espaçamento para o footer */
+            footer {
+                margin-top: 50px; /* Distância do conteúdo principal */
+                padding-top: 30px;
+                padding-bottom: 30px;
+                background-color: #0e0e52;
+                color: white;
+            }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+                color: #fdd835;
+            }
+
+            .social-icons img {
+                width: 40px;
+                transition: transform 0.3s;
+            }
+
+            .social-icons img:hover {
+                transform: scale(1.1);
+            }
+
+            .contact-info, .about-info {
+                margin-bottom: 15px;
+            }
+
+            .contact-info p, .about-info p {
+                margin: 5px 0;
+            }
+        </style>
+    
     <title>ReadCycle</title>
 </head>
 <header>
@@ -48,37 +89,35 @@
 </main>
 
 <footer>
-    <div style="background-color: #0e0e52; color: #ffff !important;">
-        <p style="text-align: center;">&copy; {{ date('Y') }} ReadCycle. Todos os direitos reservados.</p>
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-5 mb-4">
-                    <div class="row">
-                        <ul class="d-flex px-4" style="gap: 20px;">
-                            <li><a href="#"><img src="{{ asset('images/icons8-instagram.svg') }}" style="width: 35px;" alt="Instagram"></a></li>
-                            <li><a href="#"><img src="{{ asset('images/icons8-facebook.svg') }}" style="width: 35px;" alt="Facebook"></a></li>
-                            <li><a href="#"><img src="{{ asset('images/icons8-twitter.svg') }}" style="width: 35px;" alt="Twitter"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-5 mb-4 px-4">
-                    <div class="row">
-                        <p class="h5 px-0">Entre em contato</p>
-                    </div>
-                    <div class="row">Endereço: Rua Exemplo, 123</div>
-                    <div class="row">E-mail: contato@readcycle.com</div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-5 mb-4 px-4">
-                    <div class="row">
-                        <p class="h5 px-0">Sobre Nós</p>
-                    </div>
-                    <div class="row">Nossa missão é promover a leitura.</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="h5">Siga-nos nas redes sociais:</p>
+                <div class="social-icons">
+                    <ul class="d-flex list-unstyled">
+                        <li><a href="#" class="me-3"><img src="{{ asset('images/icons8-instagram.svg') }}" alt="Instagram"></a></li>
+                        <li><a href="#" class="me-3"><img src="{{ asset('images/icons8-facebook.svg') }}" alt="Facebook"></a></li>
+                        <li><a href="#" class="me-3"><img src="{{ asset('images/icons8-twitter.svg') }}" alt="Twitter"></a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="col-md-4 contact-info">
+                <p class="h5">Entre em contato</p>
+                <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+                <p>E-mail: <a href="mailto:contato@readcycle.com">contato@readcycle.com</a></p>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+            </div>
+            <div class="col-md-4 about-info">
+                <p class="h5">Sobre Nós</p>
+                <p>A ReadCycle é uma plataforma que conecta pessoas que desejam compartilhar livros e expandir o acesso à leitura.</p>
+                <p>Junte-se a nós para transformar páginas em pontes e mudar destinos!</p>
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-center">&copy; {{ date('Y') }} ReadCycle. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 

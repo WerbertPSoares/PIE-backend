@@ -33,15 +33,17 @@ class UsuarioController extends Controller
     $usuario->senha = Hash::make($request->senha); 
     $usuario->save();
 
-    return redirect()->route('usuarios.show', ['id' => $usuario->id])
-    ->with('success', 'Usuário cadastrado com sucesso!');
+    // Corrigindo a passagem do parâmetro
+    return redirect()->route('usuarios.show', ['usuario' => $usuario->id])
+        ->with('success', 'Usuário cadastrado com sucesso!');
 }
 
-    public function show($id)
-    {
-        $usuario = Usuario::findOrFail($id);
-        return view('usuarios.show', compact('usuario'));
-    }
+
+public function show($id)
+{
+    $usuario = Usuario::findOrFail($id);
+    return view('usuarios.show', compact('usuario'));
+}
 
     public function edit($id)
     {
@@ -57,13 +59,17 @@ class UsuarioController extends Controller
         'email' => 'required|email|unique:usuarios,email,' . $id, 
     ]);
 
+    // Encontra o usuário com base no ID
     $usuario = Usuario::findOrFail($id);
     $usuario->nome = $request->nome;
     $usuario->email = $request->email;
     
+    // Salva as alterações no usuário
     $usuario->save(); 
 
-    return redirect()->route('usuarios.index')->with('success', 'Usuário atualizado com sucesso!');
+    // Redireciona para a página de detalhes do usuário, passando o ID como parâmetro
+    return redirect()->route('usuarios.show', ['usuario' => $usuario->id])
+                     ->with('success', 'Usuário atualizado com sucesso!');
 }
 
     public function destroy($id)

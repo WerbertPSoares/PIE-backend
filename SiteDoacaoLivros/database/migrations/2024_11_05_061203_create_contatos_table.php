@@ -14,7 +14,8 @@ class CreateContatosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email');
-            $table->text('mensagem'); // A coluna mensagem já está aqui
+            $table->text('telefone');
+            $table->text('mensagem'); 
             $table->timestamps();
         });
     }

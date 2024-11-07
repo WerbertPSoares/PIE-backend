@@ -19,26 +19,23 @@ class SolicitacaoController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validação dos dados recebidos
-        $request->validate([
-            'titulo' => 'required|string|max:255',
-            'autor' => 'required|string|max:255',
-            
-        ]);
+{
+    // Validação dos dados recebidos
+    $request->validate([
+        'titulo' => 'required|string|max:255',
+        'autor' => 'required|string|max:255',
+    ]);
 
-        // Criação de uma nova solicitação
-        $solicitacao = new Solicitacao();
-        $solicitacao->titulo = $request->titulo;
-        $solicitacao->autor = $request->autor;
-        
+    // Criação de uma nova solicitação
+    $solicitacao = new Solicitacao();
+    $solicitacao->titulo = $request->titulo;
+    $solicitacao->autor = $request->autor;
 
-        // Salve a solicitação no banco de dados
-        $solicitacao->save();
+    // Salve a solicitação no banco de dados
+    $solicitacao->save();
 
-
-        return redirect()->route('solicitacao.create')->with('success', 'Solicitação criada com sucesso!');
-    }
+    return redirect()->route('solicitacao.create')->with('success', 'Solicitação criada com sucesso!');
+}
 
     public function show($id)
     {

@@ -22,18 +22,13 @@ class Solicitacao extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function livro()
-    {
-        return $this->belongsTo(Livro::class);
-    }
-
     /**
-     * Define o relacionamento com a model Usuario (ou o nome que você usar para usuários).
+     * Define o relacionamento com a model Usuario 
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class); // Substitua 'Usuario' pelo nome correto da model de usuários, se necessário
+        return $this->belongsTo(Usuario::class); 
     }
 }

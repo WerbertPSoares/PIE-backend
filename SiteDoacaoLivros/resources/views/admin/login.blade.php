@@ -3,7 +3,7 @@
 @section('title', 'Login - Admin')
 
 @section('content')
-<div class="container mt-5">
+<div class="container mt-5 pt-5">
     <h2 class="text-center">Login - Administrador</h2>
 
     @if ($errors->any())
@@ -16,7 +16,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('admin.dashboard') }}">
+    <form method="POST" action="{{ route('admin.login.submit') }}">
         @csrf
         <div class="form-group mb-3">
             <label for="email">Email</label>
@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
     <style>
         body {
-            padding-top: 70px; /* Ajuste conforme a altura da sua navbar */
+            padding-top: 80px; /* Aumente a altura conforme a navbar */
         }
 
         .container {
