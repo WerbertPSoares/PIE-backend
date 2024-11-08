@@ -27,33 +27,35 @@
             </div>
         </div>
 
-        <!-- Lista de Gêneros -->
-        <div class="container mt-4">
-            <div class="row justify-content-center">
-                <div class="d-flex justify-content-center flex-wrap" style="gap: 50px;">
-                    <div class="col-auto genre-card">
-                        <img src="img/romance.jpg" alt="Romance" class="genre-img">
-                        <p>Romance</p>
-                    </div>
-                    <div class="col-auto genre-card">
-                        <img src="img/autoajuda.jpg" alt="Autoajuda" class="genre-img">
-                        <p>Autoajuda</p>
-                    </div>
-                    <div class="col-auto genre-card">
-                        <img src="img/ficção.jpg" alt="Ficção científica" class="genre-img">
-                        <p>Ficção Científica</p>
-                    </div>
-                    <div class="col-auto genre-card">
-                        <img src="img/terror.jpg" alt="Terror" class="genre-img">
-                        <p>Terror</p>
-                    </div>
-                    <div class="col-auto genre-card">
-                        <img src="img/hqs.jpg" alt="Quadrinhos" class="genre-img">
-                        <p>Quadrinhos</p>
-                    </div>
-                </div>
+       <!-- LISTA DE GÊNEROS -->
+<div class="container">
+    <div class="d-flex justify-content-center mt-5">
+        <!-- Flex container para centralizar os itens -->
+        <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <!-- Cada item de gênero -->
+            <div class="text-center">
+                <img src="{{ asset('images/romance.jpg') }}" alt="Romance" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Romance</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/autoajuda.jpg') }}" alt="Autoajuda" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Autoajuda</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/ficção.jpeg') }}" alt="Ficção Científica" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Ficção Científica</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/terror.jpg') }}" alt="Terror" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Terror</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/hqs.jpg') }}" alt="Quadrinhos" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Quadrinhos</p>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- Tabela de Livros -->
         @if(count($livros) > 0)

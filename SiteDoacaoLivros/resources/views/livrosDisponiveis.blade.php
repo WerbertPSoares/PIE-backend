@@ -3,54 +3,70 @@
 @section('title', 'Livros Disponíveis')
 
 @section('content')
+<head>
+<style>
+    .genre-text {
+        font-size: 1.1em;          /* Tamanho ligeiramente maior */
+        font-weight: 500;          /* Peso da fonte */
+        color: #333;               /* Cor do texto */
+        font-family: 'Roboto', sans-serif; /* Fonte personalizada */
+        margin-top: 10px;          /* Espaçamento entre imagem e texto */
+    }
+    .genre-text:hover {
+        color: #4A90E2;            /* Efeito hover com a cor primária */
+        transition: color 0.3s;    /* Suavização do efeito */
+    }
+</style>
+
+</head>
 <body>
-    <div class="container my-5 pt-5"> <!-- Padding Top adicionado -->
-    <div class="col-auto">
+    
+        <h1 class="text-center mb-4">Livros Disponíveis para Doação</h1>
+
+
+ <!-- Barra de Pesquisa -->
+<div class="container">
+    <div class="row">
+        <form class="d-flex mt-5">
+            <input id="searchInput" style="border-radius: 30px;" type="search" class="form-control me-2" placeholder="Pesquisar" aria-label="Pesquisar" oninput="filterBooks()">
+        </form>
+    </div>
+</div>
+
+ <!-- LISTA DE GÊNEROS -->
+<div class="container">
+    <div class="d-flex justify-content-center mt-5">
+        <!-- Flex container para centralizar os itens -->
+        <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <!-- Cada item de gênero -->
+            <div class="text-center">
+                <img src="{{ asset('images/romance.jpg') }}" alt="Romance" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Romance</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/autoajuda.jpg') }}" alt="Autoajuda" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Autoajuda</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/ficção.jpeg') }}" alt="Ficção Científica" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Ficção Científica</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/terror.jpg') }}" alt="Terror" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Terror</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ asset('images/hqs.jpg') }}" alt="Quadrinhos" style="width:150px; border-radius:50%;">
+                <p class="genre-text">Quadrinhos</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     
   </div>
   <hr class="mt-5" style="margin-bottom: 64px;">
 
-  <!-- BARRA DE PESQUISA -->
-
-  <div class="container">
-    <div class="row">
-      <form class="d-flex mt-5">
-        <input style="border-radius: 30px;" type="search" class="form-control me-2" placeholder="Pesquisar" aria-label="Pesquisar" oninput="filterBooks()">
-      </form>
-    </div>
-  </div>
-
-  <!-- LISTA DE GENEROS -->
-
-  <div class="container">
-    <div class="row">
-      <div class="d-flex justify-content-center mt-5">
-        <div class="row d-flex justify-content-center" style="list-style: none; gap: 50px;">
-          <div class="col-auto">
-            <img src="img/romance.jpg" alt="" style="width:150PX; border-radius:50%;">
-            <p class="text-center">Romance</p>
-          </div>
-          <div class="col-auto">
-            <img src="img/autoajuda.jpg" alt="" style="width:150PX; border-radius:50%;">
-            <p class="text-center">Autoajuda</p>
-          </div>
-          <div class="col-auto">
-            <img src="img/ficção.jpg" alt="" style="width:150PX; border-radius:50%;">
-            <p class="text-center">Ficção cientifica</p>
-          </div>
-          <div class="col-auto">
-            <img src="img/terror.jpg" alt="" style="width:150PX; border-radius:80%;">
-            <p class="text-center">Terror</p>
-          </div>
-          <div class="col-auto">
-            <img src="img/hqs.jpg" alt="" style="width:150PX; border-radius:50%;">
-            <p class="text-center">Quadrinhos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-        <h1 class="text-center mb-4">Livros Disponíveis para Doação</h1>
 
         <div class="row">
 
@@ -110,7 +126,23 @@ Solicitar Doação    </button>
         </div>
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script> <!-- Link para seu JS -->
+   <!-- JavaScript para Filtrar Livros -->
+<script>
+    function filterBooks() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const books = document.querySelectorAll('.book-item');
+
+        books.forEach((book) => {
+            const title = book.getAttribute('data-title').toLowerCase();
+            const author = book.getAttribute('data-author').toLowerCase();
+            if (title.includes(searchInput) || author.includes(searchInput)) {
+                book.style.display = 'block';
+            } else {
+                book.style.display = 'none';
+            }
+        });
+    }
+</script>
 </body>
 @endsection
 
