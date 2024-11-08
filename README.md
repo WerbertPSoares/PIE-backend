@@ -1,66 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ReadCycle - Site de Doação de Livros
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**ReadCycle** é uma plataforma dedicada à doação e troca de livros, permitindo que aqueles que possuem livros não utilizados possam doá-los para novos leitores. Nossa missão é conectar doadores e leitores, criando um ciclo de compartilhamento e amor pela leitura. 
 
-## About Laravel
+Este projeto foi desenvolvido como **Trabalho apresentado ao curso de Análise e Desenvolvimento de Sistemas**, como pré-requisito para obtenção de nota na disciplina de **Programação para Back-End**, ministrada pelo professor Marcos Gomes de Silva Rocha. O projeto propõe a criação de um site de doação de livros, chamado **ReadCycle**, com o objetivo de incentivar a leitura e promover a sustentabilidade por meio do compartilhamento de livros.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A plataforma permite que os usuários cadastrem livros para doação, informando título, autor, sinopse, telefone de contato, e uma imagem do livro. Além disso, a plataforma facilita a interação entre os doadores e os receptores, promovendo o acesso à educação e ao conhecimento de maneira inclusiva. O projeto foi desenvolvido com foco na acessibilidade e no design intuitivo, utilizando tecnologias como HTML5, CSS3, JavaScript, PHP e MySQL, em um modelo MVC. A iniciativa visa contribuir para a educação e o estímulo à leitura em comunidades carentes, tornando o processo de doação mais eficiente e organizado.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Cadastro de Usuário**: Permite que os usuários se cadastrem na plataforma para doar ou solicitar livros.
+- **Doação de Livros**: Os usuários podem cadastrar livros para doação, incluindo informações como título, autor, gênero, sinopse e imagem da capa.
+- **Busca de Livros**: Os usuários podem explorar a coleção de livros disponíveis para doação.
+- **Modal de Detalhes**: Cada livro possui um modal com detalhes como autor, editora, ISBN, e sinopse.
+- **Autenticação**: A plataforma oferece funcionalidade de login para garantir a segurança e controle de acesso.
+- **Administração**: O administrador pode gerenciar os livros cadastrados e os usuários da plataforma.
 
-## Learning Laravel
+## Tecnologias Utilizadas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Laravel** (PHP framework)
+- **MySQL** (Banco de dados)
+- **HTML5** (Estrutura de conteúdo)
+- **CSS3** (Estilização)
+- **JavaScript** (Interatividade)
+- **Bootstrap** (Componente de interface)
+- **Vite** (Ferramenta de build)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Requisitos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Antes de começar, você precisará ter o seguinte instalado:
 
-## Laravel Sponsors
+- PHP >= 8.0
+- Composer
+- Laravel >= 10.x
+- MySQL
+- Node.js e npm
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Instalação
 
-### Premium Partners
+### 1. Clone o repositório:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/seu-usuario/readcycle.git
+cd readcycle
