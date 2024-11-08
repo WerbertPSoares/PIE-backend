@@ -325,15 +325,14 @@
                     </div>
 
                     <div class="modal-footer">
-                        @if(Auth::check())
-                            <form action="{{ route('solicitacao.store') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="livro_id" value="{{ $livro->id }}">
-                                <button type="submit" class="btn btn-success">Solicitar Doação</button>
-                            </form>
-                        @else
-                            <a href="{{ route('login.form') }}" class="btn btn-warning">Solicitar Doação</a>
-                        @endif
+                    <a href="{{ route('login.form') }}">
+    <button class="btn btn-primary btn-lg px-5 py-3 rounded-3 shadow-lg border-0 fazerParte" 
+            data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" 
+            type="button">
+Solicitar Doação    </button>
+</a>
+                       
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>

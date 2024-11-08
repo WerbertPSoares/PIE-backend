@@ -34,7 +34,7 @@ class UsuarioController extends Controller
     $usuario->save();
 
     // Corrigindo a passagem do parâmetro
-    return redirect()->route('usuarios.show', ['usuario' => $usuario->id])
+    return redirect()->route('login.form')
         ->with('success', 'Usuário cadastrado com sucesso!');
 }
 
@@ -68,8 +68,8 @@ public function show($id)
     $usuario->save(); 
 
     // Redireciona para a página de detalhes do usuário, passando o ID como parâmetro
-    return redirect()->route('usuarios.show', ['usuario' => $usuario->id])
-                     ->with('success', 'Usuário atualizado com sucesso!');
+    return redirect()->route('usuarios.show', ['id' => $usuario->id])
+                 ->with('success', 'Usuário atualizado com sucesso!');
 }
 
     public function destroy($id)
