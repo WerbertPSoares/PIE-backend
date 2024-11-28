@@ -11,9 +11,7 @@ use App\Http\Controllers\ContatoController;
 use App\Models\Livro;
 
 // Rota para a página inicial (Home)
-Route::get('/', function(){
-    return view('index');
-})->name('home');
+Route::get('/', function(){return view('index'); })->name('home');
 Route::get('/livro', function () {
     return view('livro'); 
 })->name('livro');
